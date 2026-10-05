@@ -1,0 +1,19 @@
+# Netlify-instellingen. Hier hoef je normaal niets aan te passen.
+
+[build]
+  # Voor elke publicatie draait eerst de controle. Bij een fout blijft de vorige versie van de site online.
+  command = "node scripts/check-site.mjs"
+  publish = "public"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

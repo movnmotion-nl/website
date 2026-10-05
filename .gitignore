@@ -1,0 +1,9 @@
+# Systeembestanden
+.DS_Store
+Thumbs.db
+
+# Hulpmappen
+node_modules/
+.netlify/
+*.log
+.env

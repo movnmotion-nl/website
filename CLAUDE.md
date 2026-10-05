@@ -16,7 +16,7 @@ Kernzin: **"Bewegen brengt mensen samen."** Tagline: **Move. Create. Lead.**
 - MOVN SUNDAYS is iets dat we **samen opbouwen**, laagdrempelig beginnend. Noem er **geen frequentie** bij ("elke maand", "maandelijks"). Dat communiceren we niet naar buiten.
 - Zeg niet "net begonnen" of "nieuwe generatie" en maak geen claims als "op maat" of "dé community". Geen verzonnen cijfers, logo's of ledenaantallen.
 - De actieve groepen zijn voor iedereen, ongeacht leeftijd. De ontwikkelprogramma's richten zich vooral op 16 tot 35 jaar, als richtlijn.
-- Zichtbare namen op de site: alleen mensen die dat zelf willen. Eén partner blijft bewust op de achtergrond.
+- Namen en foto's van personen staan alleen op de site als zij dat zelf willen.
 
 ## Merk
 

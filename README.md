@@ -21,7 +21,7 @@ CLAUDE.md            afspraken voor wie met Claude Code aan de site werkt
 Volg deze volgorde. Elke stap bouwt voort op de vorige.
 
 1. **Gmail-account voor MOVNMOTION.** Zet 2-staps-verificatie aan en voeg een tweede herstelmogelijkheid toe (nummer of mail van een andere partner), zodat het account niet aan één persoon hangt.
-2. **GitHub.** Maak een account met dat Gmail-adres. Maak daarna een gratis **organisatie** (bijvoorbeeld `movnmotion`) en daarin een **privé-repository** (bijvoorbeeld `website`). Voeg de andere partners toe als eigenaar. Zet de inhoud van deze map in de repository.
+2. **GitHub.** Maak een account met dat Gmail-adres. Maak daarna een gratis **organisatie** (bijvoorbeeld `movnmotion-nl`) en daarin een **openbare repository** (bijvoorbeeld `website`). Netlify deployt een privé-repository van een organisatie alleen op het betaalde plan, een openbare is gratis. Voeg de andere partners toe als eigenaar. Zet de inhoud van deze map in de repository.
 3. **Netlify.** Meld je aan met je GitHub-account. Kies *Add new site*, *Import an existing project*, en selecteer de repository. De instellingen komen uit `netlify.toml`, je hoeft niets in te vullen. Klik op *Deploy*.
 4. **Domeinen bij Strato.** Leg `movnmotion.nl` (hoofddomein) en `movnmotion.com` vast.
 5. **Domein koppelen in Netlify.** Ga naar *Domain management*, kies *Add a domain* en voeg `movnmotion.nl` toe. Voeg `movnmotion.com` toe als alias. Zet `movnmotion.nl` als primair domein, dan stuurt Netlify de rest daar automatisch naartoe.
@@ -70,18 +70,10 @@ Goed om te weten:
 | Onderdeel | Kosten |
 | --- | --- |
 | Gmail | gratis |
-| GitHub (organisatie, privé-repository) | gratis |
+| GitHub (organisatie, openbare repository) | gratis |
 | Netlify | het gratis niveau is voor deze site ruim genoeg. Controleer de actuele voorwaarden op netlify.com/pricing |
 | Domeinen `.nl` en `.com` | jaarlijks, bij Strato |
 | Mailbox `info@movnmotion.nl` | afhankelijk van het Strato-pakket, controleer of een mailbox is inbegrepen |
 
 De website zelf kost dus niets, op de domeinen na.
 
-## 5. Nog te doen of te besluiten
-
-- **Over ons:** kaarten voor de twee partners die zichtbaar willen zijn (naam, rol, foto, eventueel link). De sectie `over-ons` in `index.html` is er al.
-- **Bedrijfs- en privacygegevens:** staan er bewust niet op. De site verzamelt zelf niets: geen formulieren, cookies of statistieken. Of er toch bedrijfsgegevens bij moeten (naam, adres, e-mail, KvK-nummer) hangt af van hoe MOVNMOTION juridisch is ingericht en of er diensten of sponsoring tegenover staan. Laat dit navragen bij de Kamer van Koophandel of een jurist. Voeg je later statistieken of een formulier toe, dan komt er een privacyverklaring bij.
-- **Foto's:** controleer dat iedereen die herkenbaar in beeld is, akkoord is met publicatie.
-- **Domein in de code:** `index.html` verwijst al naar `https://movnmotion.nl` (canonical en preview-afbeelding). Pas dat aan als het hoofddomein anders wordt.
-- **Merknaam:** laat controleren of "MOVNMOTION" nog vrij is, bijvoorbeeld in het register van het Benelux-bureau voor de intellectuele eigendom (BOIP).
-- **Borduren en zeefdruk:** het logo gebruikt drie dekkingen, en daarvoor is nog een vlakke versie nodig. Zie het logo-pakket.

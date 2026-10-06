@@ -28,7 +28,7 @@ Volg deze volgorde. Elke stap bouwt voort op de vorige.
 7. **Wachten op https.** Netlify regelt het beveiligingscertificaat zelf. Dat kan even duren.
 8. **Controleren.** Open `https://movnmotion.nl` en `https://movnmotion.com` (die moet doorsturen naar `.nl`). Deel de link in WhatsApp en kijk of titel, tekst en afbeelding kloppen. Previews worden soms een tijd onthouden.
 
-Zorg dat de mailbox `info@movnmotion.nl` werkt voordat de site live gaat, want dat adres staat op de site.
+Op de site staat voorlopig `movnmotion@gmail.com` als contactadres. Werkt de mailbox `info@movnmotion.nl` straks, vervang dan in `public/index.html` overal het Gmail-adres door het nieuwe adres.
 
 ## 2. Teksten en foto's aanpassen
 
@@ -51,7 +51,7 @@ De site toont geen datums. Aankondigingen van MOVN SUNDAYS lopen via beelden en 
 | GitHub (organisatie, openbare repository) | gratis |
 | Netlify | het gratis niveau is voor deze site ruim genoeg. Controleer de actuele voorwaarden op netlify.com/pricing |
 | Domeinen `.nl` en `.com` | jaarlijks, bij Strato |
-| Mailbox `info@movnmotion.nl` | afhankelijk van het Strato-pakket, controleer of een mailbox is inbegrepen |
+| Mailbox `info@movnmotion.nl` (later) | afhankelijk van het Strato-pakket, controleer of een mailbox is inbegrepen |
 
 De website zelf kost dus niets, op de domeinen na.
 

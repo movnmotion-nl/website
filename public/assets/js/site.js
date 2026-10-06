@@ -1,7 +1,6 @@
 /*
   MOVNMOTION: site-script
-  Doet drie dingen: mobiel menu, verschijn-animatie en het blokje "Volgende keer" bij MOVN SUNDAYS.
-  De data voor dat blokje staat in data/events.js (daar pas je datums aan).
+  Doet twee dingen: mobiel menu en verschijn-animatie.
 */
 (function () {
   "use strict";
@@ -48,58 +47,6 @@
     });
   }
 
-  /* ---------- Volgende MOVN SUNDAYS ---------- */
-  function todayInAmsterdam() {
-    // "2026-11-15"-notatie, zodat datums als tekst vergeleken kunnen worden
-    return new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
-  }
-
-  function formatDate(isoDate) {
-    var date = new Date(isoDate + "T12:00:00Z");
-    return date.toLocaleDateString("nl-NL", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      timeZone: "Europe/Amsterdam",
-    });
-  }
-
-  function initNextEdition() {
-    var box = document.getElementById("nextEdition");
-    if (!box) return;
-    var events = Array.isArray(window.MOVN_EVENTS) ? window.MOVN_EVENTS : [];
-    var today = todayInAmsterdam();
-    var upcoming = events
-      .filter(function (e) {
-        return e && typeof e.datum === "string" && e.datum >= today;
-      })
-      .sort(function (a, b) {
-        return a.datum < b.datum ? -1 : 1;
-      });
-    if (!upcoming.length) return; // niets gepland of alles voorbij: blok blijft verborgen
-
-    var next = upcoming[0];
-    var when = formatDate(next.datum) + (next.tijd ? " om " + next.tijd : "");
-    box.querySelector(".next-edition__when").textContent = when;
-
-    var where = box.querySelector(".next-edition__where");
-    where.textContent = next.plaats || "";
-    where.hidden = !next.plaats;
-
-    var note = box.querySelector(".next-edition__note");
-    note.textContent = next.opmerking || "";
-    note.hidden = !next.opmerking;
-
-    var link = box.querySelector(".next-edition__link");
-    if (next.link) {
-      link.href = next.link;
-    }
-    link.hidden = !next.link;
-
-    box.hidden = false;
-  }
-
   initMenu();
   initReveal();
-  initNextEdition();
 })();

@@ -272,8 +272,16 @@ body.menu-open {
 .photo-band {
   position: relative;
   width: 100%;
+  /* De foto is 2000 px breed: op zeer brede schermen niet verder uitrekken, anders wordt hij onscherp */
+  max-width: 1600px;
+  margin: 0 auto;
   overflow: hidden;
   line-height: 0;
+}
+@media (min-width: 1600px) {
+  .photo-band {
+    border-radius: 28px;
+  }
 }
 .photo-band img {
   display: block;
@@ -432,46 +440,6 @@ section.block {
 .sundays .btn--ghost:hover {
   border-color: rgba(255, 255, 255, 0.6);
   color: var(--on-lime);
-}
-.next-edition {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  max-width: 460px;
-  margin-top: 22px;
-  padding: 16px 20px;
-  background: var(--ink);
-  color: var(--ivory);
-  border-radius: 16px;
-}
-.next-edition[hidden] {
-  display: none;
-}
-.next-edition__label {
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--lime);
-}
-.next-edition__when {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 20px;
-}
-.next-edition__where,
-.next-edition__note {
-  font-size: 15px;
-  color: var(--gray);
-}
-.next-edition__link {
-  margin-top: 6px;
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--lime);
-  text-decoration: none;
-}
-.next-edition__link:hover {
-  text-decoration: underline;
 }
 .timeline {
   display: flex;

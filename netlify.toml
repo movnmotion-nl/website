@@ -4,6 +4,22 @@
   # Voor elke publicatie draait eerst de controle. Bij een fout blijft de vorige versie van de site online.
   command = "node scripts/check-site.mjs"
   publish = "public"
+  # Alleen bouwen als public/, scripts/ of dit bestand wijzigt. Alleen README of CLAUDE.md aanpassen kost zo geen credits.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- public scripts netlify.toml"
+
+# movnmotion.com (met en zonder www) stuurt door naar movnmotion.nl, met behoud van het pad.
+# Werkt alleen als beide .com-adressen als domein-alias in Netlify staan en in het certificaat zitten.
+[[redirects]]
+  from = "https://movnmotion.com/*"
+  to = "https://movnmotion.nl/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.movnmotion.com/*"
+  to = "https://movnmotion.nl/:splat"
+  status = 301
+  force = true
 
 [[headers]]
   for = "/*"

@@ -30,9 +30,10 @@ Kernzin: **"Bewegen brengt mensen samen."** Tagline: **Move. Create. Lead.**
 - Geen externe verzoeken (lettertypes, scripts, analytics, embeds). Alleen uitgaande links naar WhatsApp, Instagram en e-mail. Zo hoeft er geen cookiemelding bij.
 - Geen inline `style=""` en geen losse kleuren in de HTML. Maak een klasse in `style.css`.
 - Afbeeldingen: JPEG zonder metadata, met `width`, `height` en een zinvolle `alt`. Grote foto rond 1600 px breed, kleine rond 560 px.
-- De data voor MOVN SUNDAYS staat alleen in `public/data/events.js`. De pagina leest die uit. Verwerk datums nooit hard in de HTML.
+- `public/index.html` begint met een grote logo-sprite (ongeveer regel 47 tot 90). Die hoef je niet te lezen: gebruik grep of regelbereiken om tokens te besparen.
+- De site toont geen datums. Aankondigingen van MOVN SUNDAYS lopen via beelden en de WhatsApp-groepen.
 - Draai **altijd** `node scripts/check-site.mjs` voordat je klaar bent. Dezelfde controle draait bij Netlify en blokkeert een publicatie bij fouten.
-- Bekijken: `python3 -m http.server --directory public` en open http://localhost:8000. Controleer ook een smal scherm (rond 400 px) en een breed scherm.
+- Bekijken: `node scripts/serve.mjs` en open http://localhost:8000 (in Claude Code: de preview `website` uit `.claude/launch.json`). Controleer ook een smal scherm (rond 400 px) en een breed scherm.
 - Werk in kleine, duidelijke commits met een Nederlandse omschrijving.
 
 ## Wat je niet doet zonder het eerst te vragen

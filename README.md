@@ -6,12 +6,11 @@ Dit is de complete website van MOVNMOTION. Het is gewone HTML, CSS en JavaScript
 public/              alles wat online komt
   index.html         de pagina met alle teksten
   404.html           pagina voor een link die niet bestaat
-  data/events.js     de datum van MOVN SUNDAYS (hier pas je datums aan)
   assets/css/        uiterlijk (kleuren staan bovenaan style.css)
-  assets/js/         menu en het blokje "Volgende keer"
+  assets/js/         menu en verschijn-animatie
   assets/img/        foto's
   assets/fonts/      lettertypes (zelf gehost)
-scripts/             controle die voor elke publicatie draait
+scripts/             controle die voor elke publicatie draait, en een lokale webserver
 netlify.toml         instellingen voor Netlify
 CLAUDE.md            afspraken voor wie met Claude Code aan de site werkt
 ```
@@ -31,41 +30,20 @@ Volg deze volgorde. Elke stap bouwt voort op de vorige.
 
 Zorg dat de mailbox `info@movnmotion.nl` werkt voordat de site live gaat, want dat adres staat op de site.
 
-## 2. De datum van MOVN SUNDAYS aanpassen
+## 2. Teksten en foto's aanpassen
 
-Dit is het enige dat je regelmatig doet, en het kan zonder iets te installeren.
-
-1. Ga naar de repository op github.com en open `public/data/events.js`.
-2. Klik op het potlood-icoon (*Edit this file*).
-3. Zet tussen de blokhaken een regel zoals deze:
-
-```js
-window.MOVN_EVENTS = [
-  { datum: "2026-11-15", tijd: "10:00", plaats: "Rotterdam", link: "https://chat.whatsapp.com/..." },
-];
-```
-
-4. Klik op *Commit changes*. Binnen ongeveer een minuut staat het op de site.
-
-Goed om te weten:
-
-- **Verplicht** is alleen `datum` (JJJJ-MM-DD). `tijd`, `plaats`, `opmerking` en `link` zijn optioneel.
-- Is de datum voorbij, dan verdwijnt het blokje **vanzelf**. Een vergeten update laat dus nooit een oude datum staan.
-- Staan er meerdere regels, dan toont de site de eerstvolgende.
-- **Een typefout komt nooit online.** De controle in `scripts/check-site.mjs` houdt de oude versie dan staan en laat bij Netlify onder *Deploys* zien wat er mis is, in gewone taal.
-- **Terugdraaien:** Netlify, *Deploys*, kies een eerdere versie en klik op *Publish deploy*. Op GitHub staat bovendien de hele geschiedenis.
-
-**Als jij het even niet kunt:** nodig iemand uit in de GitHub-organisatie (*People*, *Invite member*). Die persoon heeft alleen deze stappen nodig. Zonder GitHub-account kan niemand de datum aanpassen. Stuur een vervanger deze README.
-
-## 3. Andere teksten en foto's aanpassen
+De site toont geen datums. Aankondigingen van MOVN SUNDAYS lopen via beelden en de WhatsApp-groepen.
 
 - Teksten: `public/index.html`. Zoek de zin en pas hem aan. Bewerken kan ook op github.com.
 - Kleuren en uiterlijk: bovenaan `public/assets/css/style.css`.
 - Foto's: vervang een bestand in `public/assets/img/` door een JPEG met dezelfde naam. Haal eerst de metadata (locatie, camera) eruit, en houd de breedte rond 1600 px voor de grote foto en 560 px voor de kleine.
-- Lokaal bekijken: dubbelklik op `public/index.html`, of start in deze map `python3 -m http.server --directory public`.
+- Lokaal bekijken: start in deze map `node scripts/serve.mjs` en open http://localhost:8000. Die draait eerst de controle. Alleen Node is nodig, verder niets installeren.
 - Controle draaien: `node scripts/check-site.mjs`.
+- **Een fout komt nooit online.** Dezelfde controle draait bij Netlify, houdt bij een fout de oude versie staan en laat onder *Deploys* zien wat er mis is.
+- **Alleen README of CLAUDE.md gewijzigd?** Dan bouwt Netlify niet opnieuw (zie `ignore` in `netlify.toml`). Dat scheelt credits.
+- **Terugdraaien:** Netlify, *Deploys*, kies een eerdere versie en klik op *Publish deploy*. Op GitHub staat bovendien de hele geschiedenis.
 
-## 4. Kosten
+## 3. Kosten
 
 | Onderdeel | Kosten |
 | --- | --- |

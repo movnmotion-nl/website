@@ -4,6 +4,8 @@
   # Voor elke publicatie draait eerst de controle. Bij een fout blijft de vorige versie van de site online.
   command = "node scripts/check-site.mjs"
   publish = "public"
+  # Alleen bouwen als public/, scripts/ of dit bestand wijzigt. Alleen README of CLAUDE.md aanpassen kost zo geen credits.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- public scripts netlify.toml"
 
 [[headers]]
   for = "/*"

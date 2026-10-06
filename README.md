@@ -36,7 +36,7 @@ De site toont geen datums. Aankondigingen van MOVN SUNDAYS lopen via beelden en 
 
 - Teksten: `public/index.html`. Zoek de zin en pas hem aan. Bewerken kan ook op github.com.
 - Kleuren en uiterlijk: bovenaan `public/assets/css/style.css`.
-- Foto's: vervang een bestand in `public/assets/img/` door een JPEG met dezelfde naam. Haal eerst de metadata (locatie, camera) eruit, en houd de breedte rond 1600 px voor de grote foto en 560 px voor de kleine.
+- Foto's: vervang een bestand in `public/assets/img/` door een JPEG met dezelfde naam. Haal eerst de metadata (locatie, camera) eruit, en maak de grote foto (fotoband) 2000 px breed plus een kopie van 1200 px met `-1200` in de naam, en de kleine foto's rond 560 px.
 - Lokaal bekijken: start in deze map `node scripts/serve.mjs` en open http://localhost:8000. Die draait eerst de controle. Alleen Node is nodig, verder niets installeren.
 - Controle draaien: `node scripts/check-site.mjs`.
 - **Een fout komt nooit online.** Dezelfde controle draait bij Netlify, houdt bij een fout de oude versie staan en laat onder *Deploys* zien wat er mis is.

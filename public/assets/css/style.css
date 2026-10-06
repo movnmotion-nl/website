@@ -272,8 +272,16 @@ body.menu-open {
 .photo-band {
   position: relative;
   width: 100%;
+  /* De foto is 2000 px breed: op zeer brede schermen niet verder uitrekken, anders wordt hij onscherp */
+  max-width: 1600px;
+  margin: 0 auto;
   overflow: hidden;
   line-height: 0;
+}
+@media (min-width: 1600px) {
+  .photo-band {
+    border-radius: 28px;
+  }
 }
 .photo-band img {
   display: block;

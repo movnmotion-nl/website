@@ -13,7 +13,7 @@ Kernzin: **"Bewegen brengt mensen samen."** Tagline: **Move. Create. Lead.**
 - Alle teksten zijn Nederlands, warm, direct, zonder bedrijfsjargon.
 - Gebruik **geen lange gedachtestreep (em-dash)**. Gebruik komma's, punten of dubbele punten.
 - Zeg **"pijlers"** (Move, Create, Lead). Nooit "werelden" of "culturen".
-- MOVN SUNDAYS is iets dat we **samen opbouwen**, laagdrempelig beginnend. Noem er **geen frequentie** bij ("elke maand", "maandelijks"). Dat communiceren we niet naar buiten.
+- MOVN SUNDAYS is laagdrempelig en voor iedereen. Presenteer het als iets dat er is, niet als "in opbouw" of "we beginnen klein". Noem er **geen frequentie** bij ("elke maand", "maandelijks"). Dat communiceren we niet naar buiten.
 - Zeg niet "net begonnen" of "nieuwe generatie" en maak geen claims als "op maat" of "dé community". Geen verzonnen cijfers, logo's of ledenaantallen.
 - De actieve groepen zijn voor iedereen, ongeacht leeftijd. De ontwikkelprogramma's richten zich vooral op 16 tot 35 jaar, als richtlijn.
 - Namen en foto's van personen staan alleen op de site als zij dat zelf willen.

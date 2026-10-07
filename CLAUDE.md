@@ -29,7 +29,7 @@ Kernzin: **"Bewegen brengt mensen samen."** Tagline: **Move. Create. Lead.**
 - Geen bouwtools, frameworks of pakketten toevoegen zonder overleg. Houd het bij HTML, CSS en JavaScript.
 - Geen externe verzoeken (lettertypes, scripts, analytics, embeds). Alleen uitgaande links naar WhatsApp, Instagram en e-mail. Zo hoeft er geen cookiemelding bij.
 - Geen inline `style=""` en geen losse kleuren in de HTML. Maak een klasse in `style.css`.
-- Afbeeldingen: JPEG zonder metadata, met `width`, `height` en een zinvolle `alt`. Fotoband: 2000 px plus een `-1200`-versie via `srcset` (de band is maximaal 1600 px breed). Kleine foto's rond 560 px.
+- Afbeeldingen: JPEG zonder metadata, met `width`, `height` en een zinvolle `alt`. Fotoband: 2000 px plus een `-1200`-versie via `srcset` (de band is even breed als de inhoud, maximaal 1072 px). Kleine foto's rond 560 px.
 - `public/index.html` begint met een grote logo-sprite (ongeveer regel 47 tot 90). Die hoef je niet te lezen: gebruik grep of regelbereiken om tokens te besparen.
 - De site toont geen datums. Aankondigingen van MOVN SUNDAYS lopen via beelden en de WhatsApp-groepen.
 - Draai **altijd** `node scripts/check-site.mjs` voordat je klaar bent. Dezelfde controle draait bij Netlify en blokkeert een publicatie bij fouten.

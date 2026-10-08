@@ -173,6 +173,7 @@ section {
 .nav-mobile a {
   font-weight: 600;
   font-size: 15px;
+  white-space: nowrap;
   text-decoration: none;
   opacity: 0.85;
 }
@@ -364,12 +365,6 @@ section.block--tight {
   gap: 14px;
   margin-top: 40px;
   text-align: center;
-}
-.can-cta p {
-  max-width: 520px;
-  margin: 0;
-  font-size: 14px;
-  color: var(--gray);
 }
 
 /* ---------- Fotoband ---------- */
@@ -978,7 +973,8 @@ footer {
     gap: 24px;
   }
 }
-@media (max-width: 720px) {
+/* Onder 900 px past het hele menu niet meer naast logo en knop: dan het mobiele menu */
+@media (max-width: 900px) {
   .nav-links {
     display: none;
   }
@@ -1009,6 +1005,8 @@ footer {
     font-size: 15px;
     opacity: 1;
   }
+}
+@media (max-width: 720px) {
   .snapshot-strip img {
     width: 140px;
     height: 160px;

@@ -319,11 +319,7 @@ section.block--tight {
   color: var(--ivory);
 }
 #kunnen .section-head {
-  margin-bottom: 28px;
-}
-#kunnen h2 {
-  font-size: clamp(20px, 2.4vw, 26px);
-  text-wrap: balance;
+  margin-bottom: 20px;
 }
 @media (max-width: 640px) {
   .can-words {

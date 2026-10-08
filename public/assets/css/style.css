@@ -213,13 +213,13 @@ body.menu-open {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 96px 24px 80px;
+  padding: 72px 24px 64px;
   text-align: center;
 }
 .hero-mark {
-  width: 54px;
-  height: 44.5px;
-  margin-bottom: 20px;
+  width: 44px;
+  height: 36.3px;
+  margin-bottom: 16px;
   color: var(--lime);
 }
 .hero-title {
@@ -229,20 +229,20 @@ body.menu-open {
 .hero-wordmark {
   display: block;
   margin: 0 auto;
-  width: clamp(260px, 56vw, 610px);
+  width: clamp(220px, 44vw, 480px);
   height: auto;
   aspect-ratio: 6354 / 688;
 }
 .hero .tagline {
-  margin-top: 18px;
+  margin-top: 14px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--lime);
 }
 .hero .statement {
-  margin: 34px auto 0;
+  margin: 28px auto 0;
   font-family: "Bricolage Grotesque", sans-serif;
   font-weight: 800;
   font-size: clamp(32px, 5.2vw, 56px);
@@ -265,7 +265,96 @@ body.menu-open {
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
-  margin-top: 36px;
+  margin-top: 32px;
+}
+.hero-note {
+  margin: 16px auto 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--lime);
+}
+
+/* ---------- Wat je hier kunt ---------- */
+section.block--tight {
+  padding-top: 24px;
+}
+.can-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.can-item {
+  --c: var(--lime);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--c);
+  border-radius: 16px;
+}
+.can-item--create {
+  --c: var(--magenta);
+}
+.can-item--lead {
+  --c: var(--amber);
+}
+.can-item--all {
+  border-image: linear-gradient(var(--lime), var(--magenta), var(--amber)) 1;
+  border-width: 0 0 0 4px;
+  border-radius: 0;
+}
+.can-item b {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 19px;
+  color: var(--c);
+}
+.can-item--all b {
+  color: var(--ivory);
+}
+.can-item span {
+  font-size: 15px;
+  color: var(--gray);
+}
+#kunnen h2 {
+  text-wrap: balance;
+}
+@media (max-width: 640px) {
+  .can-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .can-item {
+    padding: 14px 14px 16px;
+    border-radius: 12px;
+  }
+  .can-item b {
+    font-size: 16px;
+  }
+  .can-item span {
+    font-size: 13.5px;
+  }
+  .can-item--all {
+    grid-column: 1 / -1;
+  }
+}
+.can-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 40px;
+  text-align: center;
+}
+.can-cta p {
+  max-width: 520px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--gray);
 }
 
 /* ---------- Fotoband ---------- */
@@ -593,32 +682,25 @@ section.block {
   color: var(--gray);
   font-size: 15.5px;
 }
-table.phases {
-  width: 100%;
-  margin-top: 16px;
-  border-collapse: collapse;
+.phases {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
   font-size: 14px;
 }
-table.phases th {
-  padding: 8px 0;
-  border-bottom: 1px solid var(--line);
-  text-align: left;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--lime);
-}
-table.phases td {
+.phases li {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
-  vertical-align: top;
-  color: var(--gray);
 }
-table.phases td:first-child {
-  padding-right: 14px;
-  font-weight: 700;
+.phases b {
   white-space: nowrap;
   color: var(--ivory);
+}
+.phases span {
+  color: var(--gray);
 }
 
 /* ---------- Over ons ---------- */
@@ -923,6 +1005,13 @@ footer {
     max-width: 760px;
     white-space: normal;
     text-wrap: balance;
+  }
+  .phases li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .who-card {
+    padding: 24px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

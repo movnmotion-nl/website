@@ -279,83 +279,59 @@ body.menu-open {
 section.block--tight {
   padding-top: 24px;
 }
-.can-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin: 0;
+.can-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 0;
+  max-width: 980px;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
-}
-.can-item {
-  --c: var(--lime);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 26px 22px 22px;
-  overflow: hidden;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-}
-/* Gekleurde balk bovenaan, bij alle kaarten even dik en even rond */
-.can-item::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 4px;
-  background: var(--c);
-}
-.can-item--create {
-  --c: var(--magenta);
-}
-.can-item--lead {
-  --c: var(--amber);
-}
-.can-item--all {
-  grid-column: span 2;
-}
-.can-item--all::before {
-  background: linear-gradient(90deg, var(--lime), var(--magenta), var(--amber));
-}
-.can-item b {
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 19px;
-  color: var(--c);
-}
-.can-item--all b {
-  color: var(--ivory);
-}
-.can-item span {
-  font-size: 15px;
-  color: var(--gray);
-}
-#kunnen h2 {
+  font-weight: 800;
+  font-size: clamp(28px, 4.6vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-align: center;
   text-wrap: balance;
 }
-@media (max-width: 980px) {
-  .can-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .can-item--all {
-    grid-column: 1 / -1;
-  }
+.can-word {
+  white-space: nowrap;
+}
+/* Punt tussen de woorden, in grijs */
+.can-word:not(:last-child)::after {
+  content: "·";
+  margin: 0 0.32em;
+  color: var(--gray);
+  opacity: 0.5;
+}
+.can-word--move {
+  color: var(--lime);
+}
+.can-word--create {
+  color: var(--magenta);
+}
+.can-word--lead {
+  color: var(--amber);
+}
+.can-word--all {
+  color: var(--ivory);
+}
+#kunnen .section-head {
+  margin-bottom: 28px;
+}
+#kunnen h2 {
+  font-size: clamp(20px, 2.4vw, 26px);
+  text-wrap: balance;
 }
 @media (max-width: 640px) {
-  .can-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  .can-words {
+    flex-direction: column;
+    gap: 2px;
   }
-  .can-item {
-    padding: 20px 14px 16px;
-    border-radius: 12px;
-  }
-  .can-item b {
-    font-size: 16px;
-  }
-  .can-item span {
-    font-size: 13.5px;
+  .can-word:not(:last-child)::after {
+    content: none;
   }
 }
 .can-cta {

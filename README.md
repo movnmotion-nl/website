@@ -51,7 +51,7 @@ De site toont geen datums. Aankondigingen van MOVN SUNDAYS lopen via beelden en 
 | GitHub (organisatie, openbare repository) | gratis |
 | Netlify | het gratis niveau is voor deze site ruim genoeg. Controleer de actuele voorwaarden op netlify.com/pricing |
 | Domeinen `.nl` en `.com` | jaarlijks, bij Strato |
-| Mailbox `info@movnmotion.nl` | afhankelijk van het Strato-pakket, controleer of een mailbox is inbegrepen |
+| Mailbox `info@movnmotion.nl` | in het hostingpakket bij Strato |
 
 De website zelf kost dus niets, op de domeinen na.
 

@@ -173,6 +173,7 @@ section {
 .nav-mobile a {
   font-weight: 600;
   font-size: 15px;
+  white-space: nowrap;
   text-decoration: none;
   opacity: 0.85;
 }
@@ -213,13 +214,13 @@ body.menu-open {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 96px 24px 80px;
+  padding: 72px 24px 64px;
   text-align: center;
 }
 .hero-mark {
-  width: 54px;
-  height: 44.5px;
-  margin-bottom: 20px;
+  width: 44px;
+  height: 36.3px;
+  margin-bottom: 16px;
   color: var(--lime);
 }
 .hero-title {
@@ -229,20 +230,20 @@ body.menu-open {
 .hero-wordmark {
   display: block;
   margin: 0 auto;
-  width: clamp(260px, 56vw, 610px);
+  width: clamp(220px, 44vw, 480px);
   height: auto;
   aspect-ratio: 6354 / 688;
 }
 .hero .tagline {
-  margin-top: 18px;
+  margin-top: 14px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--lime);
 }
 .hero .statement {
-  margin: 34px auto 0;
+  margin: 28px auto 0;
   font-family: "Bricolage Grotesque", sans-serif;
   font-weight: 800;
   font-size: clamp(32px, 5.2vw, 56px);
@@ -265,7 +266,77 @@ body.menu-open {
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
-  margin-top: 36px;
+  margin-top: 32px;
+}
+.hero-note {
+  margin: 16px auto 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--lime);
+}
+
+/* ---------- Wat je hier kunt ---------- */
+section.block--tight {
+  padding-top: 24px;
+}
+.can-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 0;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4.6vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-wrap: balance;
+}
+.can-word {
+  white-space: nowrap;
+}
+/* Punt tussen de woorden, in grijs */
+.can-word:not(:last-child)::after {
+  content: "·";
+  margin: 0 0.32em;
+  color: var(--gray);
+  opacity: 0.5;
+}
+.can-word--move {
+  color: var(--lime);
+}
+.can-word--create {
+  color: var(--magenta);
+}
+.can-word--lead {
+  color: var(--amber);
+}
+.can-word--all {
+  color: var(--ivory);
+}
+#kunnen .section-head {
+  margin-bottom: 20px;
+}
+@media (max-width: 640px) {
+  .can-words {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .can-word:not(:last-child)::after {
+    content: none;
+  }
+}
+.can-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 40px;
+  text-align: center;
 }
 
 /* ---------- Fotoband ---------- */
@@ -593,32 +664,25 @@ section.block {
   color: var(--gray);
   font-size: 15.5px;
 }
-table.phases {
-  width: 100%;
-  margin-top: 16px;
-  border-collapse: collapse;
+.phases {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
   font-size: 14px;
 }
-table.phases th {
-  padding: 8px 0;
-  border-bottom: 1px solid var(--line);
-  text-align: left;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--lime);
-}
-table.phases td {
+.phases li {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
-  vertical-align: top;
-  color: var(--gray);
 }
-table.phases td:first-child {
-  padding-right: 14px;
-  font-weight: 700;
+.phases b {
   white-space: nowrap;
   color: var(--ivory);
+}
+.phases span {
+  color: var(--gray);
 }
 
 /* ---------- Over ons ---------- */
@@ -881,7 +945,8 @@ footer {
     gap: 24px;
   }
 }
-@media (max-width: 720px) {
+/* Onder 900 px past het hele menu niet meer naast logo en knop: dan het mobiele menu */
+@media (max-width: 900px) {
   .nav-links {
     display: none;
   }
@@ -912,6 +977,8 @@ footer {
     font-size: 15px;
     opacity: 1;
   }
+}
+@media (max-width: 720px) {
   .snapshot-strip img {
     width: 140px;
     height: 160px;
@@ -923,6 +990,13 @@ footer {
     max-width: 760px;
     white-space: normal;
     text-wrap: balance;
+  }
+  .phases li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .who-card {
+    padding: 24px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

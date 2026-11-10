@@ -979,9 +979,15 @@ footer {
   }
 }
 @media (max-width: 720px) {
+  /* Drie foto's naast elkaar, ook op een smal scherm */
+  .snapshot-strip {
+    flex-wrap: nowrap;
+  }
   .snapshot-strip img {
-    width: 140px;
-    height: 160px;
+    width: 33%;
+    max-width: 140px;
+    height: auto;
+    aspect-ratio: 7 / 8;
     border-width: 4px;
   }
 }
